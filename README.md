@@ -6,7 +6,7 @@ This budget app empowers you to manage your finances effortlessly with its intui
 
 Getting Started:
 
-1. Download from GitHub: Clone the project repository from GitHub by running git clone https://github.com/your-username/your-repo-name.git.
+1. Download from GitHub: Clone the project repository from GitHub by running git clone.
 2. Install Dependencies: Install the necessary Node.js packages using npm install.
 3. Launch the Server: Start the server by running npm run server.
 4. Access the App: View the app locally in your browser at http://localhost:3000 (or as indicated in the project's instructions). You may need to run npm run dev for development mode.
