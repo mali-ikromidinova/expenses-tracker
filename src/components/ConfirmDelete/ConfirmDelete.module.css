@@ -1,0 +1,23 @@
+.confirmDelete {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.confirmDelete p {
+  color: var(--color-white);
+  margin-bottom: 1.2rem;
+  font-size: 16px;
+}
+
+.confirmDelete div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.confirmDelete h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}

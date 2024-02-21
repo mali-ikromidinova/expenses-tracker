@@ -1,0 +1,46 @@
+.form {
+  overflow: hidden;
+  font-size: 1.4rem;
+  width: 80rem;
+}
+
+.modal {
+  width: 80rem;
+}
+
+.formRow {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24rem 1fr 1.2fr;
+  gap: 2.4rem;
+
+  padding: 1.2rem 0;
+}
+
+.formRow:first-child {
+  padding-top: 0;
+}
+
+.formRow:last-child {
+  padding-bottom: 0;
+}
+
+.formRow:not(:last-child) {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.formRow:has(button) {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.formSpan {
+  font-size: 1.4rem;
+  color: var(--color-red-700);
+}

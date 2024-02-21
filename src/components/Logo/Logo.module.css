@@ -1,0 +1,26 @@
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.logoWrapper span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.red {
+  stroke: var(--color-brand--1);
+  color: var(--color-brand--1);
+}
+
+.white {
+  stroke: var(--color-white);
+  color: var(--color-white);
+}

@@ -1,0 +1,57 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menuList {
+  position: fixed;
+
+  background-color: var(--color-grey-50);
+  box-shadow: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+  border-radius: 7px;
+}
+
+.menuButton {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  transition: all 0.2s;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.menuButton:hover {
+  background-color: var(--color-grey-50);
+}
+
+.menuButton svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--color-grey-400);
+  transition: all 0.3s;
+}
+
+.menuToggle {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 5px;
+  transform: translateX(0.8rem);
+  transition: all 0.2s;
+}
+
+.menuToggle:hover {
+  background-color: var(--color-grey-100);
+}
+
+.menuToggle svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--color-grey-700);
+}
