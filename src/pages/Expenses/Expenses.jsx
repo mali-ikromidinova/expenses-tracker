@@ -11,7 +11,7 @@ export default function Expenses() {
   const expenses = finances.filter((item) => item.type === "expense");
 
   const totalExpenses = expenses.reduce(
-    (totalAmount, expense) => totalAmount + expense.amount,
+    (totalAmount, expense) => totalAmount + Number(expense.amount),
     0
   );
 
@@ -29,7 +29,10 @@ export default function Expenses() {
             <h4>
               Total expenses: <span>${totalExpenses}</span>
             </h4>
-            <Button variation="primary">Log expense</Button>
+
+            <Modal.Open opens="create">
+              <Button variation="primary">Log expense</Button>
+            </Modal.Open>
           </div>
         </header>
 

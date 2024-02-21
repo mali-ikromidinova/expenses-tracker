@@ -2,13 +2,9 @@
 /* eslint-disable react/prop-types */
 import {
   CartesianGrid,
-  Cell,
   Legend,
   Line,
   LineChart,
-  Pie,
-  PieChart,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -53,7 +49,7 @@ export default function Dashboard() {
             <p>Total Income: ${totalIncomes}</p>
             <p>Your balance: ${totalIncomes - totalExpenses}</p>
             <Modal.Open opens="create">
-              <Button variation="primary">Log income</Button>
+              <Button variation="primary">Log transaction</Button>
             </Modal.Open>
           </div>
         </main>
@@ -69,7 +65,6 @@ function ExpensesLineChart() {
   const { finances } = useFinances();
   const expenses = finances.filter((item) => item.type === "expense");
 
-  console.log(expenses);
   return (
     <div>
       <LineChart
@@ -98,27 +93,3 @@ function ExpensesLineChart() {
     </div>
   );
 }
-
-// function IncomePieChart() {
-//   const { finances } = useFinances();
-
-//   const income = finances.filter((item) => item.type === "income");
-//   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
-//   return (
-//     <PieChart width={400} height={400}>
-//       <Pie
-//         data={income}
-//         cx="50%"
-//         cy="50%"
-//         labelLine={false}
-//         outerRadius={80}
-//         fill="#8884d8"
-//         dataKey="amount"
-//       >
-//         {income.map((entry, index) => (
-//           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-//         ))}
-//       </Pie>
-//     </PieChart>
-//   );
-// }

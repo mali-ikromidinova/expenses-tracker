@@ -65,15 +65,15 @@ textarea {
   font-size: 1.6rem;
   border: none;
   border-radius: 5px;
-  background-color: #a1a1aa;
+  /* background-color: #a1a1aa; */
   transition: all 0.2s;
-  color: #fff;
+  color: var(--color-brand--1);
 }
 
 input:focus {
   outline: 1px solid #52525b;
   background-color: #fff;
-  color: var(--color-brand--1);
+  color: var(--color-brand--2);
 }
 
 .cta:link,
@@ -141,4 +141,33 @@ input:focus {
 .page-header-right h4 {
   color: var(--color-dark--2);
   font-size: 1.5rem;
+}
+
+.formLabel {
+  font-weight: 600;
+  color: var(--color-white);
+}
+.radio {
+  display: flex;
+  align-items: center;
+}
+
+.radio label {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.radio-input {
+  width: 20%;
+  border: none;
+  outline: none;
+}
+
+.radio-input:focus {
+  outline: none;
+  color: var(--color-brand--1);
+}
+
+input[type="radio"]:checked:after {
+  accent-color: var(--color-brand--1);
 }

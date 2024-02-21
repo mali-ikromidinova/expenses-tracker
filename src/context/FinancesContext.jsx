@@ -65,24 +65,26 @@ function FinancesProvider({ children }) {
     initialState
   );
 
-  useEffect(function () {
-    async function getFinances() {
-      dispatch({ type: "loading" });
-      try {
-        const res = await fetch(`${API_URL}/budgetData`);
-        const data = await res.json();
-
-        dispatch({ type: "finances/loaded", payload: data });
-      } catch {
-        dispatch({ type: "rejected", payload: "Error in loading finances" });
-        throw new Error("Finances could not be loaded");
-      }
-    }
+  useEffect(() => {
     getFinances();
   }, []);
 
+  async function getFinances() {
+    dispatch({ type: "loading" });
+    try {
+      const res = await fetch(`${API_URL}/budgetData`);
+      const data = await res.json();
+
+      dispatch({ type: "finances/loaded", payload: data });
+    } catch {
+      dispatch({ type: "rejected", payload: "Error in loading finances" });
+      throw new Error("Finances could not be loaded");
+    }
+  }
+
   async function createFinance(financeData) {
     dispatch({ type: "loading" });
+    console.log(financeData);
     try {
       const res = await fetch(`${API_URL}/budgetData/`, {
         method: "POST",
@@ -92,6 +94,8 @@ function FinancesProvider({ children }) {
         },
       });
       const data = await res.json();
+      console.log("from create", data);
+      console.log("from create", finances);
 
       dispatch({ type: "finance/created", payload: data });
     } catch (error) {

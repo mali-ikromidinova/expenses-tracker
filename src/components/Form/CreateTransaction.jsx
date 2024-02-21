@@ -8,18 +8,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function CreateTransactionForm({ transactionToEdit = {}, onCloseModal }) {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const { id: editId, ...editValues } = transactionToEdit;
 
   const [category, setCategory] = useState("" || editValues.category);
   const [amount, setAmount] = useState("" || editValues.amount);
   const [date, setDate] = useState("" || editValues.date);
-  const [type, setType] = useState("expense" || "income");
+  const [type, setType] = useState("");
 
   const isEditSession = Boolean(editId);
   const { loading, createFinance, editFinance } = useFinances();
   const isWorking = loading;
+
+  const handleCheckboxChange = (e) => {
+    setType(e.target.value);
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,6 +36,7 @@ function CreateTransactionForm({ transactionToEdit = {}, onCloseModal }) {
       amount,
       category,
       date,
+      type,
     };
 
     if (isEditSession) {
@@ -76,16 +81,35 @@ function CreateTransactionForm({ transactionToEdit = {}, onCloseModal }) {
         />
       </FormRow>
 
-      {/* <FormRow label="type">
-        <label htmlFor="income">Income</label>
-        <input
-          value={type}
-          onChange={(e) => setDate(e.target.value)}
-          type="type"
-          id="income"
-          disabled={isWorking}
-        />
-      </FormRow> */}
+      <FormRow>
+        <label className="formLabel" htmlFor="type">
+          Transaction Type
+        </label>
+        <div className="radio">
+          <input
+            type="radio"
+            className="radio-input"
+            value="expense"
+            id="expense"
+            name="type"
+            checked={type === "expense"}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="expense">Expense</label>
+        </div>
+        <div className="radio">
+          <input
+            type="radio"
+            className="radio-input"
+            id="income"
+            value="income"
+            name="type"
+            checked={type === "income"}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="income">Income</label>
+        </div>
+      </FormRow>
 
       <FormRow>
         <Button type="submit" disabled={isWorking} variation="secondary">
